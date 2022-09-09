@@ -1,0 +1,224 @@
+
+entity Client {
+	name String,
+    secretKey String,
+    isActive Boolean
+}
+
+entity Channel {
+	name String,
+    homeLink String,
+    secretKey String,
+    isActive Boolean
+}
+
+relationship OneToMany {
+	Client to Channel{client}
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity ProductContext {
+	l1 String,
+	l2 String,
+	l3 String,
+    contextId String,
+    isActive Boolean
+}
+
+relationship OneToMany {
+	Channel to ProductContext{client}
+}
+
+entity Qustion {
+	qestion String,
+    isActive Boolean
+}
+
+relationship OneToMany {
+	ProductContext to Qustion{context}
+}
+
+entity PossibleAnswer {
+	answer String,
+    isActive Boolean
+}
+
+relationship OneToMany {
+	Qustion to PossibleAnswer{qus}
+}
+
+entity Answer {
+	answer String
+}
+
+relationship OneToMany {
+	Qustion to Answer{qus}
+}
+
+entity AnswerContext {
+	sessionId String
+}
+
+relationship OneToMany {
+	AnswerContext to Answer{context}
+}
+
+relationship OneToMany {
+	ProductContext to AnswerContext{prodContext}
+}
+
+
+entity LiquidationPartner {
+	name String,
+    pan String,
+    isActive Boolean
+}
+
+relationship OneToMany {
+	Client to LiquidationPartner{client}
+}
+
+entity Hub {
+	name String,
+    address1 String,
+    city String,
+    lat Float,
+    long Float,
+    pincode Integer,
+    isActive Boolean
+}
+
+relationship OneToMany {
+	LiquidationPartner to Hub{partner}
+}
+
+entity Price {
+	price Integer,
+    isActive Boolean
+}
+
+relationship ManyToMany {
+	Price{possibleAns} to PossibleAnswer{price}
+}
+
+relationship OneToMany {
+    LiquidationPartner to Price{partner}
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+entity Employee {
+	name String,
+	phone Integer,
+    email String,
+    isActive Boolean,
+    role Role
+}
+
+enum Role {
+    Admin,
+    User
+}
+
+relationship OneToMany {
+    Hub to Employee{emp}
+}
+
+entity ExchangeOrder {
+	clientSalesOrderId String,
+    clientSalesOrderValue Float,
+    exchangeValue Float,
+    orderDate Float,
+    pickupByDPDate Float,
+    pickupByLPDate Float,
+    deliveryToClientDCDate Float,
+    deliveryToLPDate Float,
+    trashDate Float,
+    status Status
+}
+
+enum Status {
+    Init,
+    CancelByUser,
+    CancelByLiquidationPartner,
+    CancelByDeliveryPartner,
+    PickupDone,
+    DeliverToClientDC,
+    DeliverToLiquidationPartner,
+    Trashed
+}
+
+relationship ManyToMany {
+    PossibleAnswer{order} to ExchangeOrder{possibleAns}
+}
+
+relationship OneToOne {
+    AnswerContext to ExchangeOrder{ansContext}
+}
+
+relationship OneToOne {
+    Hub to ExchangeOrder{hub}
+}
+
+entity DeliveryPartner {
+    name String
+}
+
+relationship OneToMany {
+    Client to DeliveryPartner{client}
+}
+
+relationship OneToMany {
+    DeliveryPartner to ExchangeOrder{deliveryPartner}
+}
+
+entity Ledger {
+    isActive Boolean
+}
+
+relationship OneToMany {
+    LiquidationPartner to Ledger{deliveryPartner}
+}
+
+entity Transaction {
+    details String,
+    type TxtType,
+    isRefunded Boolean,
+    refundReason String
+}
+
+enum TxtType {
+    Debit,
+    CreditNote
+}
+
+relationship OneToOne {
+    ExchangeOrder to Transaction{order}
+}
+
+relationship OneToMany {
+    Ledger to Transaction{ledger}
+}
+
+entity QcQuestion {
+    question String
+}
+
+relationship OneToMany {
+    ProductContext to QcQuestion{prodContext}
+}
+
+entity QcAnswer {
+    answer String
+}
+
+relationship OneToMany {
+    ExchangeOrder to QcAnswer{order}
+}
+
+relationship OneToMany {
+    QcQuestion to QcAnswer{order}
+}
