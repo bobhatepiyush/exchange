@@ -1,0 +1,47 @@
+{
+  "applications": "*",
+  "changelogDate": "20220909151856",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "transaction",
+  "fields": [
+    {
+      "fieldName": "details",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "TxtType",
+      "fieldValues": "Debit,CreditNote"
+    },
+    {
+      "fieldName": "isRefunded",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "refundReason",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Transaction",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "exchangeOrder",
+      "otherEntityRelationshipName": "txn",
+      "ownerSide": false,
+      "relationshipName": "order",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "ledger",
+      "otherEntityRelationshipName": "transaction",
+      "relationshipName": "ledger",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

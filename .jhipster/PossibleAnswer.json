@@ -1,0 +1,45 @@
+{
+  "applications": "*",
+  "changelogDate": "20220909151846",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "possible_answer",
+  "fields": [
+    {
+      "fieldName": "answer",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PossibleAnswer",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "exchangeOrder",
+      "otherEntityRelationshipName": "possibleAns",
+      "ownerSide": true,
+      "relationshipName": "order",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "qustion",
+      "otherEntityRelationshipName": "possibleAnswer",
+      "relationshipName": "qus",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "price",
+      "otherEntityRelationshipName": "possibleAns",
+      "ownerSide": false,
+      "relationshipName": "price",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

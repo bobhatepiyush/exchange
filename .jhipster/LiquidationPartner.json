@@ -1,0 +1,53 @@
+{
+  "applications": "*",
+  "changelogDate": "20220909151849",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "liquidation_partner",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pan",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "LiquidationPartner",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "hub",
+      "otherEntityRelationshipName": "partner",
+      "relationshipName": "hub",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "price",
+      "otherEntityRelationshipName": "partner",
+      "relationshipName": "price",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "ledger",
+      "otherEntityRelationshipName": "deliveryPartner",
+      "relationshipName": "ledger",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "liquidationPartner",
+      "relationshipName": "client",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}
