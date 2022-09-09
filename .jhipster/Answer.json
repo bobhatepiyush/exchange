@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20220909151847",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "answer",
+  "fields": [
+    {
+      "fieldName": "answer",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Answer",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "qustion",
+      "otherEntityRelationshipName": "answer",
+      "relationshipName": "qus",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "answerContext",
+      "otherEntityRelationshipName": "answer",
+      "relationshipName": "context",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

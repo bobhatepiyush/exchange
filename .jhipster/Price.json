@@ -1,0 +1,38 @@
+{
+  "applications": "*",
+  "changelogDate": "20220909151851",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "price",
+  "fields": [
+    {
+      "fieldName": "price",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Price",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "possibleAnswer",
+      "otherEntityRelationshipName": "price",
+      "ownerSide": true,
+      "relationshipName": "possibleAns",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "liquidationPartner",
+      "otherEntityRelationshipName": "price",
+      "relationshipName": "partner",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

@@ -1,0 +1,45 @@
+{
+  "applications": "*",
+  "changelogDate": "20220909151843",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "channel",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "homeLink",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "secretKey",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Channel",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "productContext",
+      "otherEntityRelationshipName": "client",
+      "relationshipName": "productContext",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "channel",
+      "relationshipName": "client",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

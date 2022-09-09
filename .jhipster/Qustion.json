@@ -1,0 +1,43 @@
+{
+  "applications": "*",
+  "changelogDate": "20220909151845",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "qustion",
+  "fields": [
+    {
+      "fieldName": "qestion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Qustion",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "possibleAnswer",
+      "otherEntityRelationshipName": "qus",
+      "relationshipName": "possibleAnswer",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "answer",
+      "otherEntityRelationshipName": "qus",
+      "relationshipName": "answer",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "productContext",
+      "otherEntityRelationshipName": "qustion",
+      "relationshipName": "context",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}
