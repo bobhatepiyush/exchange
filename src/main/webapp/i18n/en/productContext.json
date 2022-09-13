@@ -1,0 +1,32 @@
+{
+  "exchangeApp": {
+    "productContext": {
+      "home": {
+        "title": "Product Contexts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Product Context",
+        "createOrEditLabel": "Create or edit a Product Context",
+        "notFound": "No Product Contexts found"
+      },
+      "created": "A new Product Context is created with identifier {{ param }}",
+      "updated": "A Product Context is updated with identifier {{ param }}",
+      "deleted": "A Product Context is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Context {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Context"
+      },
+      "id": "ID",
+      "l1": "L 1",
+      "l2": "L 2",
+      "l3": "L 3",
+      "contextId": "Context Id",
+      "isActive": "Is Active",
+      "qustion": "Qustion",
+      "answerContext": "Answer Context",
+      "qcQuestion": "Qc Question",
+      "client": "Client"
+    }
+  }
+}

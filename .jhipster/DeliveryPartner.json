@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20220913113800",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "delivery_partner",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "DeliveryPartner",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "exchangeOrder",
+      "otherEntityRelationshipName": "deliveryPartner",
+      "relationshipName": "exchangeOrder",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "deliveryPartner",
+      "relationshipName": "client",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

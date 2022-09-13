@@ -1,0 +1,62 @@
+{
+  "applications": "*",
+  "changelogDate": "20220913113750",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "product_context",
+  "fields": [
+    {
+      "fieldName": "l1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "l2",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "l3",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contextId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "not an ignored comment",
+  "jpaMetamodelFiltering": false,
+  "name": "ProductContext",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "qustion",
+      "otherEntityRelationshipName": "context",
+      "relationshipName": "qustion",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "answerContext",
+      "otherEntityRelationshipName": "prodContext",
+      "relationshipName": "answerContext",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "qcQuestion",
+      "otherEntityRelationshipName": "prodContext",
+      "relationshipName": "qcQuestion",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "channel",
+      "otherEntityRelationshipName": "productContext",
+      "relationshipName": "client",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

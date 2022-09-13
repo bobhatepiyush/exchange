@@ -7,6 +7,23 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "client": "Client",
+        "channel": "Channel",
+        "productContext": "Product Context",
+        "qustion": "Qustion",
+        "possibleAnswer": "Possible Answer",
+        "answer": "Answer",
+        "answerContext": "Answer Context",
+        "liquidationPartner": "Liquidation Partner",
+        "hub": "Hub",
+        "price": "Price",
+        "employee": "Employee",
+        "exchangeOrder": "Exchange Order",
+        "deliveryPartner": "Delivery Partner",
+        "ledger": "Ledger",
+        "transaction": "Transaction",
+        "qcQuestion": "Qc Question",
+        "qcAnswer": "Qc Answer",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20220913113803",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "qc_question",
+  "fields": [
+    {
+      "fieldName": "question",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "QcQuestion",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "qcAnswer",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "qcAnswer",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "productContext",
+      "otherEntityRelationshipName": "qcQuestion",
+      "relationshipName": "prodContext",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}
