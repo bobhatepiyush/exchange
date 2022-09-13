@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20220913113801",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "ledger",
+  "fields": [
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Ledger",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "transaction",
+      "otherEntityRelationshipName": "ledger",
+      "relationshipName": "transaction",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "liquidationPartner",
+      "otherEntityRelationshipName": "ledger",
+      "relationshipName": "deliveryPartner",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

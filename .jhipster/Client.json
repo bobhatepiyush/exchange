@@ -1,0 +1,47 @@
+{
+  "applications": "*",
+  "changelogDate": "20220913113748",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "client",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "secretKey",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Client",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "channel",
+      "otherEntityRelationshipName": "client",
+      "relationshipName": "channel",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "liquidationPartner",
+      "otherEntityRelationshipName": "client",
+      "relationshipName": "liquidationPartner",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "deliveryPartner",
+      "otherEntityRelationshipName": "client",
+      "relationshipName": "deliveryPartner",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

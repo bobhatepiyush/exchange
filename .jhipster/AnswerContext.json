@@ -1,0 +1,40 @@
+{
+  "applications": "*",
+  "changelogDate": "20220913113754",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "answer_context",
+  "fields": [
+    {
+      "fieldName": "sessionId",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "AnswerContext",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "exchangeOrder",
+      "otherEntityRelationshipName": "ansContext",
+      "ownerSide": true,
+      "relationshipName": "order",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "answer",
+      "otherEntityRelationshipName": "context",
+      "relationshipName": "answer",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "productContext",
+      "otherEntityRelationshipName": "answerContext",
+      "relationshipName": "prodContext",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

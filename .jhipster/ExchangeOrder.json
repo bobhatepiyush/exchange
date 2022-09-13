@@ -1,0 +1,98 @@
+{
+  "applications": "*",
+  "changelogDate": "20220913113759",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "exchange_order",
+  "fields": [
+    {
+      "fieldName": "clientSalesOrderId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "clientSalesOrderValue",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "exchangeValue",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "orderDate",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "pickupByDPDate",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "pickupByLPDate",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "deliveryToClientDCDate",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "deliveryToLPDate",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "trashDate",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "Init,CancelByUser,CancelByLiquidationPartner,CancelByDeliveryPartner,PickupDone,DeliverToClientDC,DeliverToLiquidationPartner,Trashed"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ExchangeOrder",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "transaction",
+      "otherEntityRelationshipName": "order",
+      "ownerSide": true,
+      "relationshipName": "txn",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "qcAnswer",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "qcAnswer",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "answerContext",
+      "otherEntityRelationshipName": "order",
+      "ownerSide": false,
+      "relationshipName": "ansContext",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "hub",
+      "otherEntityRelationshipName": "order",
+      "ownerSide": false,
+      "relationshipName": "hub",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "deliveryPartner",
+      "otherEntityRelationshipName": "exchangeOrder",
+      "relationshipName": "deliveryPartner",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "possibleAnswer",
+      "otherEntityRelationshipName": "order",
+      "ownerSide": false,
+      "relationshipName": "possibleAns",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

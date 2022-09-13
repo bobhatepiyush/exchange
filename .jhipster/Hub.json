@@ -1,0 +1,64 @@
+{
+  "applications": "*",
+  "changelogDate": "20220913113756",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "hub",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address1",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "city",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lat",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "long",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "pincode",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Hub",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "exchangeOrder",
+      "otherEntityRelationshipName": "hub",
+      "ownerSide": true,
+      "relationshipName": "order",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "emp",
+      "relationshipName": "employee",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "liquidationPartner",
+      "otherEntityRelationshipName": "hub",
+      "relationshipName": "partner",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}
